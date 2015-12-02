@@ -4,26 +4,24 @@ package org.usfirst.frc.team3966.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc.team3966.robot.Robot;
-import org.usfirst.frc.team3966.robot.commands.doNothing;
 
 /**
  *
  */
-public class TankDrive extends Command {
+public class doNothing extends Command {
 
-    public TankDrive() {
+    public doNothing() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.drive);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-      // Reset stuff maybe?
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drive.TankDrive(Robot.oi.rstick.getY(), Robot.oi.lstick.getY());
+    	Robot.drive.doNothing();
     }
 
     // Make this return true when this Command no longer needs to run execute()

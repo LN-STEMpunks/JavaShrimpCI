@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team3966.robot.commands.TankDrive;
+import org.usfirst.frc.team3966.robot.commands.doNothing;
 import org.usfirst.frc.team3966.robot.subsystems.Drive;
 
 /**
@@ -17,7 +18,7 @@ import org.usfirst.frc.team3966.robot.subsystems.Drive;
  */
 public class Robot extends IterativeRobot {
 
-	public static final Drive drive = new Drive();
+	public static final Drive drive;
 	public static OI oi;
 
   Command autonomousCommand;
@@ -28,12 +29,14 @@ public class Robot extends IterativeRobot {
    */
   public void robotInit() {
 	  oi = new OI();
+		drive = new Drive();
     // instantiate the command used for the autonomous period
-    autonomousCommand = new TankDrive();
+    autonomousCommand = new doNothing();
   }
 
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
+		drive.doNothing();
 	}
 
   public void autonomousInit() {
@@ -49,7 +52,7 @@ public class Robot extends IterativeRobot {
   }
 
   public void teleopInit() {
-	// This makes sure that the autonomous stops running when
+	  // This makes sure that the autonomous stops running when
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
