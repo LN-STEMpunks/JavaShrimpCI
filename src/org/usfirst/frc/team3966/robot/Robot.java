@@ -18,20 +18,22 @@ import org.usfirst.frc.team3966.robot.subsystems.Drive;
  */
 public class Robot extends IterativeRobot {
 
-	public static final Drive drive;
-	public static OI oi;
+  public static Drive drive;
+  public static OI oi;
 
   Command autonomousCommand;
+  Command teleopDrive;
 
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
    */
   public void robotInit() {
-	  oi = new OI();
-		drive = new Drive();
+	oi = new OI();
+    drive = new Drive();
     // instantiate the command used for the autonomous period
     autonomousCommand = new doNothing();
+    teleopDrive = new TankDrive();
   }
 
 	public void disabledPeriodic() {
@@ -52,11 +54,14 @@ public class Robot extends IterativeRobot {
   }
 
   public void teleopInit() {
-	  // This makes sure that the autonomous stops running when
+    // This makes sure that the autonomous stops running when
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
     if (autonomousCommand != null) autonomousCommand.cancel();
+    
+    // Start the TankDrive command:
+    if (teleopDrive != null) teleopDrive.start();
   }
 
   /**

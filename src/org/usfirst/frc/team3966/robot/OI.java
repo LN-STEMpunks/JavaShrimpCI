@@ -16,6 +16,8 @@ public class OI {
   // We have both Joysticks and Game controllers now at our disposal,
   // so let's adapt for both just in case.
 
+  public static RobotMap robotMap = new RobotMap();
+
   public static boolean controllerEnabled = false;
 
   public Joystick rstick;
@@ -29,11 +31,11 @@ public class OI {
   // number it is.
   static {
     if ( !controllerEnabled ) {
-      Joystick rstick = new Joystick(0); // Right drive stick
-      Joystick lstick = new Joystick(1); // Left drive stick
-      Joystick fstick = new Joystick(2); // Arm and superstructure stick
+      Joystick rstick = new Joystick(robotMap.rstick); // Right drive stick
+      Joystick lstick = new Joystick(robotMap.lstick); // Left drive stick
+      Joystick fstick = new Joystick(robotMap.fstick); // Arm and superstructure stick
     } else if ( controllerEnabled ) {
-      Joystick controller = new Joystick(0); // A single controller for Shrimp
+      Joystick controller = new Joystick(robotMap.cstick); // A single controller for Shrimp
     }
   }
   // Button button = new JoystickButton(stick, buttonNumber);
