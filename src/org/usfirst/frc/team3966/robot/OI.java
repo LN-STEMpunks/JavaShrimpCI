@@ -2,7 +2,6 @@ package org.usfirst.frc.team3966.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
-import org.usfirst.frc.team3966.robot.commands.TankDrive;
 
 /**
  * This class is the glue that binds the controls on the physical operator
