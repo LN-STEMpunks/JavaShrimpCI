@@ -5,9 +5,11 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import org.usfirst.frc.team3966.robot.OI;
+import org.usfirst.frc.team3966.robot.RobotMap;
+import org.usfirst.frc.team3966.robot.subsystems.Drive;
 import org.usfirst.frc.team3966.robot.commands.TankDrive;
 import org.usfirst.frc.team3966.robot.commands.doNothing;
-import org.usfirst.frc.team3966.robot.subsystems.Drive;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -29,6 +31,7 @@ public class Robot extends IterativeRobot {
    * used for any initialization code.
    */
   public void robotInit() {
+	RobotMap.init();
 	oi = new OI();
     drive = new Drive();
     // instantiate the command used for the autonomous period
@@ -36,10 +39,10 @@ public class Robot extends IterativeRobot {
     teleopDrive = new TankDrive();
   }
 
-	public void disabledPeriodic() {
-		Scheduler.getInstance().run();
-		drive.doNothing();
-	}
+  public void disabledPeriodic() {
+	Scheduler.getInstance().run();
+	drive.doNothing();
+  }
 
   public void autonomousInit() {
     // schedule the autonomous command (example)

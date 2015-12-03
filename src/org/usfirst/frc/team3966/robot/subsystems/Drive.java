@@ -1,12 +1,14 @@
 
 package org.usfirst.frc.team3966.robot.subsystems;
 
-import edu.wpi.first.wpilibj.command.Command;
+//import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 import org.usfirst.frc.team3966.robot.commands.TankDrive;
+import org.usfirst.frc.team3966.robot.RobotMap;
 
-import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.SpeedController;
 
 /**
  * Drive subsystem, controls left and right motors.
@@ -20,8 +22,9 @@ public class Drive extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-	Talon rightmotor = new Talon(1); // Right motor #1
-	Talon leftmotor = new Talon(0); // Left motor #2
+    SpeedController leftmotor = RobotMap.leftmotor;
+    SpeedController rightmotor = RobotMap.rightmotor;
+    RobotDrive robotdrive = RobotMap.robotdrive;
 
 	public void doNothing() {
 		rightmotor.set(0);
