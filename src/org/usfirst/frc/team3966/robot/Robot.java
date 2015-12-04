@@ -31,8 +31,8 @@ public class Robot extends IterativeRobot {
    * used for any initialization code.
    */
   public void robotInit() {
-	RobotMap.init();
-	oi = new OI();
+  RobotMap.init();
+  oi = new OI();
     drive = new Drive();
     // instantiate the command used for the autonomous period
     autonomousCommand = new doNothing();
@@ -40,8 +40,8 @@ public class Robot extends IterativeRobot {
   }
 
   public void disabledPeriodic() {
-	Scheduler.getInstance().run();
-	drive.doNothing();
+  Scheduler.getInstance().run();
+  drive.doNothing();
   }
 
   public void autonomousInit() {

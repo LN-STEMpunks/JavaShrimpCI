@@ -41,13 +41,13 @@ public class OI {
   */
   
   public OI() {
-	  if ( !controllerEnabled ) {
-	      rstick = new Joystick(robotMap.rstick); // Right drive stick
-	      lstick = new Joystick(robotMap.lstick); // Left drive stick
-	      fstick = new Joystick(robotMap.fstick); // Arm and superstructure stick
-	    } else if ( controllerEnabled ) {
-	      controller = new Joystick(robotMap.cstick); // A single controller for Shrimp
-	    }
+    if ( !controllerEnabled ) {
+        rstick = new Joystick(robotMap.rstick); // Right drive stick
+        lstick = new Joystick(robotMap.lstick); // Left drive stick
+        fstick = new Joystick(robotMap.fstick); // Arm and superstructure stick
+      } else if ( controllerEnabled ) {
+        controller = new Joystick(robotMap.cstick); // A single controller for Shrimp
+      }
       // SmartDashboard Buttons
       SmartDashboard.putData("doNothing", new doNothing());
       SmartDashboard.putData("TankDrive", new TankDrive());

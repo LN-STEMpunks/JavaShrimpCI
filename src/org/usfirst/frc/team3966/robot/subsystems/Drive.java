@@ -20,34 +20,34 @@ import edu.wpi.first.wpilibj.Talon;
  */
 public class Drive extends Subsystem {
 
-	private static RobotMap robotMap = new RobotMap();
+  private static RobotMap robotMap = new RobotMap();
 
-	// Put methods for controlling this subsystem
-	// here. Call these from Commands.
-	private static SpeedController leftmotor = new Talon(robotMap.leftmotorpin);
+  // Put methods for controlling this subsystem
+  // here. Call these from Commands.
+  private static SpeedController leftmotor = new Talon(robotMap.leftmotorpin);
 
-	
-	static {
-		LiveWindow.addActuator("Drive", "leftmotor", (Talon) leftmotor);
-	}
-	
-	//SpeedController leftmotor = RobotMap.leftmotor;
-	SpeedController rightmotor = RobotMap.rightmotor;
-	RobotDrive robotdrive = RobotMap.robotdrive;
+  
+  static {
+    LiveWindow.addActuator("Drive", "leftmotor", (Talon) leftmotor);
+  }
+  
+  //SpeedController leftmotor = RobotMap.leftmotor;
+  SpeedController rightmotor = RobotMap.rightmotor;
+  RobotDrive robotdrive = RobotMap.robotdrive;
 
-	public void doNothing() {
-		rightmotor.set(0);
-		leftmotor.set(0);
-	}
+  public void doNothing() {
+    rightmotor.set(0);
+    leftmotor.set(0);
+  }
 
-	public void initDefaultCommand() {
-		// Set the default command for a subsystem here.
-		setDefaultCommand(new TankDrive());
-	}
+  public void initDefaultCommand() {
+    // Set the default command for a subsystem here.
+    setDefaultCommand(new TankDrive());
+  }
 
-	public void TankDrive(double rightmotorspeed, double leftmotorspeed) {
-		rightmotor.set(rightmotorspeed);
-		leftmotor.set(leftmotorspeed);
+  public void TankDrive(double rightmotorspeed, double leftmotorspeed) {
+    rightmotor.set(rightmotorspeed);
+    leftmotor.set(leftmotorspeed);
 
-	}
+  }
 }
