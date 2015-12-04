@@ -28,21 +28,20 @@ public class RobotMap {
 	
 	public final int cstick = 0;
 	
-	public static SpeedController leftmotor;
+	public final int leftmotorpin = 0;
+	
 	public static SpeedController rightmotor;
 	public static RobotDrive robotdrive;
 	
 	public static void init() {
-		leftmotor = new Talon(0);
 		rightmotor = new Talon(1);
-        LiveWindow.addActuator("Drive", "leftmotor", (Talon) leftmotor);
         LiveWindow.addActuator("Drive", "rightmotor", (Talon) rightmotor);
         
-        robotdrive = new RobotDrive(leftmotor, rightmotor);
+        //robotdrive = new RobotDrive(leftmotor, rightmotor);
         
-        robotdrive.setSafetyEnabled(true);
-        robotdrive.setExpiration(0.1);
-        robotdrive.setSensitivity(0.5);
-        robotdrive.setMaxOutput(0.6);
+        //robotdrive.setSafetyEnabled(true);
+        //robotdrive.setExpiration(0.1);
+        //robotdrive.setSensitivity(0.5);
+        //robotdrive.setMaxOutput(0.6);
 	}
 }
