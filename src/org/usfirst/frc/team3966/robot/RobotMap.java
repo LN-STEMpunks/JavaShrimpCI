@@ -31,11 +31,16 @@ public class RobotMap {
 	public final int leftmotorpin = 0;
 	public final int rightmotorpin = 1;
 	
-	public static SpeedController rightmotor;
-	public static RobotDrive robotdrive;
+	public class driveMotor extends Talon {
+    public driveMotor(int channel) {
+      super(channel);
+    }
+	}
+	
+	//public static RobotDrive robotdrive;
 	
 	public static void init() {
-      LiveWindow.addActuator("Drive", "rightmotor", (Talon) rightmotor);
+      
         
       //robotdrive = new RobotDrive(leftmotor, rightmotor);
         

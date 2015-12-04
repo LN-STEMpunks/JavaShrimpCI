@@ -40,8 +40,8 @@ public class Robot extends IterativeRobot {
   }
 
   public void disabledPeriodic() {
-  Scheduler.getInstance().run();
-  drive.doNothing();
+    Scheduler.getInstance().run();
+    drive.doNothing();
   }
 
   public void autonomousInit() {

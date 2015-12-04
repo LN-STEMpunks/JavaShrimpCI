@@ -3,14 +3,12 @@ package org.usfirst.frc.team3966.robot.subsystems;
 
 //import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-
 import org.usfirst.frc.team3966.robot.commands.TankDrive;
 import org.usfirst.frc.team3966.robot.RobotMap;
+import org.usfirst.frc.team3966.robot.subsystems.DriveMotor;
 
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.Talon;
 
 /**
  * Drive subsystem, controls left and right motors.
@@ -24,15 +22,10 @@ public class Drive extends Subsystem {
 
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  private static SpeedController leftmotor = new Talon(robotMap.leftmotorpin);
-  private static SpeedController rightmotor = new Talon(robotMap.rightmotorpin);
-
+  private static SpeedController leftmotor = new DriveMotor(robotMap.leftmotorpin);
+  private static SpeedController rightmotor = new DriveMotor(robotMap.rightmotorpin);
   
-  static {
-    LiveWindow.addActuator("Drive", "leftmotor", (Talon) leftmotor);
-  }
-  
-  RobotDrive robotdrive = RobotMap.robotdrive;
+  //RobotDrive robotdrive = RobotMap.robotdrive;
 
   public void doNothing() {
     rightmotor.set(0);
