@@ -29,7 +29,7 @@ public class OI {
   public Joystick fstick;
   public Joystick controller;
 
-  /*static {
+  static {
     if ( !controllerEnabled ) {
       Joystick rstick = new Joystick(robotMap.rstick); // Right drive stick
       Joystick lstick = new Joystick(robotMap.lstick); // Left drive stick
@@ -38,23 +38,15 @@ public class OI {
       Joystick controller = new Joystick(robotMap.cstick); // A single controller for Shrimp
     }
   }
-  */
-  
+
   public OI() {
-    if ( !controllerEnabled ) {
-        rstick = new Joystick(robotMap.rstick); // Right drive stick
-        lstick = new Joystick(robotMap.lstick); // Left drive stick
-        fstick = new Joystick(robotMap.fstick); // Arm and superstructure stick
-      } else if ( controllerEnabled ) {
-        controller = new Joystick(robotMap.cstick); // A single controller for Shrimp
-      }
       // SmartDashboard Buttons
       SmartDashboard.putData("doNothing", new doNothing());
       SmartDashboard.putData("TankDrive", new TankDrive());
   }
-  
-  // Button button = new JoystickButton(stick, buttonNumber);  
-  
+
+  // Button button = new JoystickButton(stick, buttonNumber);
+
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a joystick.
   // You create one by telling it which joystick it's on and which button
