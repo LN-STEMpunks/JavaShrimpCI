@@ -25,14 +25,13 @@ public class Drive extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   private static SpeedController leftmotor = new Talon(robotMap.leftmotorpin);
+  private static SpeedController rightmotor = new Talon(robotMap.rightmotorpin);
 
   
   static {
     LiveWindow.addActuator("Drive", "leftmotor", (Talon) leftmotor);
   }
   
-  //SpeedController leftmotor = RobotMap.leftmotor;
-  SpeedController rightmotor = RobotMap.rightmotor;
   RobotDrive robotdrive = RobotMap.robotdrive;
 
   public void doNothing() {
