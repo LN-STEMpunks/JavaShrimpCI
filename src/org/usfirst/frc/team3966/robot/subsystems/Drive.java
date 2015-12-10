@@ -24,7 +24,7 @@ public class Drive extends Subsystem {
   // here. Call these from Commands.
   private static SpeedController leftmotor = new DriveMotor(robotMap.leftmotorpin);
   private static SpeedController rightmotor = new DriveMotor(robotMap.rightmotorpin);
-  
+
   //RobotDrive robotdrive = RobotMap.robotdrive;
 
   public void doNothing() {
@@ -40,6 +40,5 @@ public class Drive extends Subsystem {
   public void TankDrive(double rightmotorspeed, double leftmotorspeed) {
     rightmotor.set(rightmotorspeed);
     leftmotor.set(leftmotorspeed);
-
   }
 }

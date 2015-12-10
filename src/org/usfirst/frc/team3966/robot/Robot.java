@@ -31,8 +31,8 @@ public class Robot extends IterativeRobot {
    * used for any initialization code.
    */
   public void robotInit() {
-  RobotMap.init();
-  oi = new OI();
+    RobotMap.init();
+    oi = new OI();
     drive = new Drive();
     // instantiate the command used for the autonomous period
     autonomousCommand = new doNothing();
@@ -62,7 +62,7 @@ public class Robot extends IterativeRobot {
     // continue until interrupted by another command, remove
     // this line or comment it out.
     if (autonomousCommand != null) autonomousCommand.cancel();
-    
+
     // Start the TankDrive command:
     if (teleopDrive != null) teleopDrive.start();
   }
