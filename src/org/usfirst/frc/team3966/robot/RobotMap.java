@@ -3,7 +3,6 @@ package org.usfirst.frc.team3966.robot;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -31,22 +30,6 @@ public class RobotMap {
 	public final int leftmotorpin = 0;
 	public final int rightmotorpin = 1;
 	
-	public class driveMotor extends Talon {
-    public driveMotor(int channel) {
-      super(channel);
-    }
-	}
-	
 	//public static RobotDrive robotdrive;
 	
-	public static void init() {
-      
-        
-      //robotdrive = new RobotDrive(leftmotor, rightmotor);
-        
-      //robotdrive.setSafetyEnabled(true);
-      //robotdrive.setExpiration(0.1);
-      //robotdrive.setSensitivity(0.5);
-      //robotdrive.setMaxOutput(0.6);
-	}
 }
