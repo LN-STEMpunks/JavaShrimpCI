@@ -20,8 +20,8 @@ import org.usfirst.frc.team3966.robot.commands.doNothing;
  */
 public class Robot extends IterativeRobot {
 
-  public static Drive drive = new Drive();
-  public static OI oi = new OI();
+  public static final Drive drive = new Drive();
+  public static OI oi;
 
   Command autonomousCommand;
   Command teleopDrive;
@@ -31,9 +31,7 @@ public class Robot extends IterativeRobot {
    * used for any initialization code.
    */
   public void robotInit() {
-    //RobotMap.init();
-    //oi = new OI();
-    //drive = new Drive();
+    oi = new OI();
     // instantiate the command used for the autonomous period
     teleopDrive = new TankDrive();
     autonomousCommand = new doNothing();
