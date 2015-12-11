@@ -23,13 +23,21 @@ public class OI {
 
   public static RobotMap robotMap = new RobotMap();
 
-  public static boolean controllerEnabled = false;
+  public static boolean controllerEnabled = true;
 
+  /*
   public Joystick rstick;
   public Joystick lstick;
   public Joystick fstick;
   public Joystick controller;
+  //*/
+  
+  public Joystick controller = new XboxController(robotMap.cstick); // A single controller for Shrimp
+  public Joystick rstick = new Joystick(robotMap.rstick); // Right drive stick
+  public Joystick lstick = new Joystick(robotMap.lstick); // Left drive stick
+  public Joystick fstick = new Joystick(robotMap.fstick); // Arm and superstructure stick
 
+  /*
   static {
     if ( !controllerEnabled ) {
       Joystick rstick = new Joystick(robotMap.rstick); // Right drive stick
@@ -39,6 +47,7 @@ public class OI {
       Joystick controller = new XboxController(robotMap.cstick); // A single controller for Shrimp
     }
   }
+  //*/
 
   public OI() {
       // SmartDashboard Buttons

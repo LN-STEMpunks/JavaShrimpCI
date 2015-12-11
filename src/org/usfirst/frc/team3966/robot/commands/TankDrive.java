@@ -28,7 +28,7 @@ public class TankDrive extends Command {
       if ( !OI.controllerEnabled) {
         Robot.drive.TankDrive(Robot.oi.rstick.getY(), Robot.oi.lstick.getY());
       } else {
-        Robot.drive.TankDrive(-Robot.oi.controller.getRawAxis(5), -Robot.oi.controller.getRawAxis(1));
+        Robot.drive.TankDrive(Robot.oi.controller.getRawAxis(5), Robot.oi.controller.getRawAxis(1));
       }
     }
 
