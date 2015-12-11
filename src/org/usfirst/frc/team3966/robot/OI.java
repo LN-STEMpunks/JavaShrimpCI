@@ -1,13 +1,14 @@
 package org.usfirst.frc.team3966.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-//import edu.wpi.first.wpilibj.buttons.Button;
-//import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team3966.robot.RobotMap;
 import org.usfirst.frc.team3966.robot.commands.doNothing;
 import org.usfirst.frc.team3966.robot.commands.TankDrive;
+import org.usfirst.frc.team3966.util.XboxController;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -35,7 +36,7 @@ public class OI {
       Joystick lstick = new Joystick(robotMap.lstick); // Left drive stick
       Joystick fstick = new Joystick(robotMap.fstick); // Arm and superstructure stick
     } else if ( controllerEnabled ) {
-      Joystick controller = new Joystick(robotMap.cstick); // A single controller for Shrimp
+      Joystick controller = new XboxController(robotMap.cstick); // A single controller for Shrimp
     }
   }
 

@@ -4,6 +4,7 @@ package org.usfirst.frc.team3966.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc.team3966.robot.Robot;
+import org.usfirst.frc.team3966.robot.OI;
 import org.usfirst.frc.team3966.robot.subsystems.Drive;
 //import org.usfirst.frc.team3966.robot.commands.doNothing;
 
@@ -24,7 +25,11 @@ public class TankDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-      Robot.drive.TankDrive(Robot.oi.rstick.getY(), Robot.oi.lstick.getY());
+      if ( !OI.controllerEnabled) {
+        Robot.drive.TankDrive(Robot.oi.rstick.getY(), Robot.oi.lstick.getY());
+      } else {
+        Robot.drive.TankDrive(-Robot.oi.controller.getRawAxis(5), -Robot.oi.controller.getRawAxis(1));
+      }
     }
 
     // Make this return true when this Command no longer needs to run execute()
