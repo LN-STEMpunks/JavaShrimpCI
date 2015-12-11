@@ -39,6 +39,6 @@ public class Drive extends Subsystem {
 
   public void TankDrive(double rightmotorspeed, double leftmotorspeed) {
     rightmotor.set(rightmotorspeed);
-    leftmotor.set(leftmotorspeed);
+    leftmotor.set(-leftmotorspeed);
   }
 }
