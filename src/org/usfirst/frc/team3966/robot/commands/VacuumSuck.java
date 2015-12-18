@@ -18,7 +18,7 @@ public class VacuumSuck extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-      System.out.println("I am a VacuumSuck.");
+      System.out.println("I am a Vacuum. Sucks for you.");
     }
 
     // Called repeatedly when this Command is scheduled to run
