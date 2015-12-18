@@ -10,6 +10,7 @@ import org.usfirst.frc.team3966.robot.RobotMap;
 import org.usfirst.frc.team3966.robot.subsystems.Drive;
 import org.usfirst.frc.team3966.robot.subsystems.Vacuum;
 import org.usfirst.frc.team3966.robot.commands.TankDrive;
+import org.usfirst.frc.team3966.robot.commands.VacuumSuck;
 import org.usfirst.frc.team3966.robot.commands.doNothing;
 
 /**
@@ -27,6 +28,7 @@ public class Robot extends IterativeRobot {
 
   Command autonomousCommand;
   Command teleopDrive;
+  Command vacuumSuck;
 
   /**
    * This function is run when the robot is first started up and should be
@@ -37,6 +39,7 @@ public class Robot extends IterativeRobot {
     // instantiate the command used for the autonomous period
     teleopDrive = new TankDrive();
     autonomousCommand = new doNothing();
+    vacuumSuck = new VacuumSuck();
   }
 
   public void disabledPeriodic() {

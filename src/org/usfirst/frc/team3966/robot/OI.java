@@ -33,6 +33,8 @@ public class OI {
   public Joystick controller;
   //*/
   
+  // It's OK if two Joystick Objects share the same Joystick port, 
+  // but we need to be careful about using the right one.
   public Joystick controller = new XboxController(robotMap.cstick); // A single controller for Shrimp
   public Joystick rstick = new Joystick(robotMap.rstick); // Right drive stick
   public Joystick lstick = new Joystick(robotMap.lstick); // Left drive stick
@@ -57,8 +59,13 @@ public class OI {
   }
 
   // Button button = new JoystickButton(stick, buttonNumber);
-  Button VacuumButton = new JoystickButton(controller, robotMap.vacuumOnButton);
-
+  Button VacuumButton; { // Looks like a function declaration XD
+    if (controllerEnabled) {
+      VacuumButton = new JoystickButton(controller, robotMap.vacuumOnButton);
+    } else {
+      VacuumButton = new JoystickButton(fstick, robotMap.vacuumOnButton);
+    }
+  }
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a joystick.
   // You create one by telling it which joystick it's on and which button
@@ -79,7 +86,7 @@ public class OI {
   // Run the command while the button is being held down and interrupt it once
   // the button is released.
   // button.whileHeld(new TankDrive());
-  {
+  { // Requires a normal block to execute apparently.
     VacuumButton.whileHeld(new VacuumSuck());
   }
   // Start the command when the button is released  and let it run the command
