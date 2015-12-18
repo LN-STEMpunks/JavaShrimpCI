@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team3966.robot.RobotMap;
 import org.usfirst.frc.team3966.robot.commands.doNothing;
 import org.usfirst.frc.team3966.robot.commands.TankDrive;
+import org.usfirst.frc.team3966.robot.commands.VacuumSuck;
 import org.usfirst.frc.team3966.util.XboxController;
 
 /**
@@ -56,6 +57,7 @@ public class OI {
   }
 
   // Button button = new JoystickButton(stick, buttonNumber);
+  Button VacuumButton = new JoystickButton(controller, robotMap.vacuumOnButton);
 
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a joystick.
@@ -77,7 +79,9 @@ public class OI {
   // Run the command while the button is being held down and interrupt it once
   // the button is released.
   // button.whileHeld(new TankDrive());
-
+  {
+    VacuumButton.whileHeld(new VacuumSuck());
+  }
   // Start the command when the button is released  and let it run the command
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new TankDrive());

@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team3966.robot.OI;
 import org.usfirst.frc.team3966.robot.RobotMap;
 import org.usfirst.frc.team3966.robot.subsystems.Drive;
+import org.usfirst.frc.team3966.robot.subsystems.Vacuum;
 import org.usfirst.frc.team3966.robot.commands.TankDrive;
 import org.usfirst.frc.team3966.robot.commands.doNothing;
 
@@ -21,6 +22,7 @@ import org.usfirst.frc.team3966.robot.commands.doNothing;
 public class Robot extends IterativeRobot {
 
   public static final Drive drive = new Drive();
+  public static final Vacuum vacuum = new Vacuum();
   public static OI oi;
 
   Command autonomousCommand;
@@ -70,7 +72,7 @@ public class Robot extends IterativeRobot {
    * You can use it to reset subsystems before shutting down.
    */
   public void disabledInit(){
-
+    if (autonomousCommand != null) autonomousCommand.cancel();
   }
 
   /**

@@ -21,15 +21,20 @@ public class RobotMap {
 	// public static int rangefinderPort = 1;
 	// public static int rangefinderModule = 1;
 
+  // Joysticks
 	public final int rstick = 0;
 	public final int lstick = 1;
 	public final int fstick = 2;
 	
 	public final int cstick = 0;
 	
+	// PWM
 	public final int leftmotorpin = 0;
 	public final int rightmotorpin = 1;
 	
-	//public static RobotDrive robotdrive;
+	public final int vacuumpin = 2;
+	
+	// Controls
+	public final int vacuumOnButton = 4; // Idk, ask game strategy.
 	
 }
