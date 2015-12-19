@@ -4,6 +4,7 @@ package org.usfirst.frc.team3966.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc.team3966.robot.Robot;
+import org.usfirst.frc.team3966.robot.RobotMap;
 //import org.usfirst.frc.team3966.robot.subsystems.Vacuum;
 
 /**
@@ -19,11 +20,19 @@ public class VacuumSuck extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
       System.out.println("I am a Vacuum. Sucks for you.");
+      Robot.vacuum.doNothing();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-      Robot.vacuum.VacuumOn(1.0);
+      //Robot.vacuum.VacuumOn(1.0);
+      if (Robot.oi.VacuumButton.get()) {
+        if (RobotMap.vacuumUseAxis) {
+          Robot.vacuum.VacuumOn(Robot.oi.controller.getRawAxis(RobotMap.vacuumOnAxis) + 1.0);
+        } else {
+          Robot.vacuum.VacuumOn(1.0);
+        }
+      }
     }
 
     // Make this return true when this Command no longer needs to run execute()

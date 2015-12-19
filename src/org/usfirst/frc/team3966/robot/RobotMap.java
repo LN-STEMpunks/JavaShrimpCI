@@ -31,7 +31,10 @@ public class RobotMap {
 	
 	public final int vacuumpin = 2;
 	
-	// Controls
-	public final int vacuumOnButton = 4; // Idk, ask game strategy.
+	// Control Mapping
+	// Buttons start from 1 apparently
+	public final int vacuumOnButton = 7; // Idk, ask game strategy.
+	public static final boolean vacuumUseAxis = true;
+	public static final int vacuumOnAxis = 3; // Does not matter if above is false
 	
 }

@@ -59,13 +59,14 @@ public class OI {
   }
 
   // Button button = new JoystickButton(stick, buttonNumber);
-  Button VacuumButton; { // Looks like a function declaration XD
+  public Button VacuumButton; { // Looks like a function declaration XD
     if (controllerEnabled) {
       VacuumButton = new JoystickButton(controller, robotMap.vacuumOnButton);
     } else {
       VacuumButton = new JoystickButton(fstick, robotMap.vacuumOnButton);
     }
   }
+  
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a joystick.
   // You create one by telling it which joystick it's on and which button
@@ -82,12 +83,12 @@ public class OI {
   // Start the command when the button is pressed and let it run the command
   // until it is finished as determined by it's isFinished method.
   // button.whenPressed(new TankDrive());
-
+  
   // Run the command while the button is being held down and interrupt it once
   // the button is released.
   // button.whileHeld(new TankDrive());
   { // Requires a normal block to execute apparently.
-    VacuumButton.whileHeld(new VacuumSuck());
+    //VacuumButton.whileHeld(new VacuumSuck());
   }
   // Start the command when the button is released  and let it run the command
   // until it is finished as determined by it's isFinished method.
