@@ -32,6 +32,8 @@ public class VacuumSuck extends Command {
         } else {
           Robot.vacuum.VacuumOn(1.0);
         }
+      } else {
+        Robot.vacuum.doNothing();
       }
     }
 
