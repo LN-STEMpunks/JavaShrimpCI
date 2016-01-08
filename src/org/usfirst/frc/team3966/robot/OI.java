@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team3966.robot.RobotMap;
 import org.usfirst.frc.team3966.robot.commands.doNothing;
+import org.usfirst.frc.team3966.robot.commands.Rotate;
 import org.usfirst.frc.team3966.robot.commands.TankDrive;
 import org.usfirst.frc.team3966.robot.commands.VacuumSuck;
 import org.usfirst.frc.team3966.util.XboxController;
