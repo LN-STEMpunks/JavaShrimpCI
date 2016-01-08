@@ -22,8 +22,8 @@ public class Drive extends Subsystem {
 
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  private static SpeedController leftmotor = new DriveMotor(robotMap.leftmotorpin);
-  private static SpeedController rightmotor = new DriveMotor(robotMap.rightmotorpin);
+  public static SpeedController leftmotor = new DriveMotor(robotMap.leftmotorpin);
+  public static SpeedController rightmotor = new DriveMotor(robotMap.rightmotorpin);
 
   //RobotDrive robotdrive = RobotMap.robotdrive;
 

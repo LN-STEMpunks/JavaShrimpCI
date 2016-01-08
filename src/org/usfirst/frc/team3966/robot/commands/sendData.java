@@ -1,13 +1,15 @@
 package org.usfirst.frc.team3966.robot.commands;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+
+import org.usfirst.frc.team3966.robot.subsystems.Drive;
+
 import edu.wpi.first.wpilibj.smartdashboard.*;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.hal.PDPJNI;
 
 public class sendData extends Command{
 
-	public static String title;
-	public static double lmotorcurrent;
-	public static double rmotorcurrent;
 	
 	public sendData()
 	{
@@ -20,9 +22,13 @@ public class sendData extends Command{
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	SmartDashboard.putString(title, "SmartDashboard Output");
-    	SmartDashboard.putNumber(lmotorcurrent, PDPJNI.getPDPChannelCurrent(1, status));
-    	SmartDashboard.putNumber(rmotorcurrent, PDPJNI.getPDPChannelCurrent(15, status));
+    	SmartDashboard.putString("", "SmartDashboard: Feedback Output");
+    	ByteBuffer status = ByteBuffer.allocateDirect(4);
+    	status.order(ByteOrder.LITTLE_ENDIAN);
+    	SmartDashboard.putNumber("Motor Current", PDPJNI.getPDPTotalCurrent(status.asIntBuffer()));
+    	SmartDashboard.putNumber("Left Motor Speed", Drive.leftmotor.get());
+    	SmartDashboard.putNumber("Right Motor Speed", Drive.rightmotor.get());
+    
     }
 
     // Make this return true when this Command no longer needs to run execute()
