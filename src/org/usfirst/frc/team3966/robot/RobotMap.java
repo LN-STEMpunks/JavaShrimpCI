@@ -19,22 +19,28 @@ public class RobotMap {
 	// public static int rangefinderModule = 1;
 
   // Joysticks
-	public final int rstick = 0;
-	public final int lstick = 1;
-	public final int fstick = 2;
+	public final static int rstick = 0;
+	public final static int lstick = 1;
+	public final static int fstick = 2;
 	
-	public final int cstick = 0;
+	public final static int cstick = 0;
 	
 	// PWM
-	public final int leftmotorpin = 0;
-	public final int rightmotorpin = 1;
+	public final static int leftmotorpin = 0;
+	public final static int rightmotorpin = 1;
 	
-	public final int vacuumpin = 2;
+	// PID
+	public final static int leftmotorEncLow = 0;
+	public final static int leftmotorEncHig = 1;
+	public final static int rightmotorEncLow = 2;
+	public final static int rightmotorEncHig = 3;
+	
+	public final static int vacuumpin = 2;
 	
 	// Control Mapping
 	// Buttons start from 1 apparently
-	public final int vacuumOnButton = 7; // Idk, ask game strategy.
-	public static final boolean vacuumUseAxis = true;
-	public static final int vacuumOnAxis = 3; // Does not matter if above is false
+	public final static int vacuumOnButton = 7; // Idk, ask game strategy.
+	public final static boolean vacuumUseAxis = true;
+	public final static int vacuumOnAxis = 3; // Does not matter if above is false
 	
 }

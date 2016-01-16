@@ -7,7 +7,6 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team3966.robot.OI;
-//import org.usfirst.frc.team3966.robot.RobotMap;
 import org.usfirst.frc.team3966.robot.subsystems.Drive;
 import org.usfirst.frc.team3966.robot.subsystems.Vacuum;
 import org.usfirst.frc.team3966.robot.commands.TankDrive;
